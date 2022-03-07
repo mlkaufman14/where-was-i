@@ -7,29 +7,22 @@ class App extends Component {
     super();
 
     this.state = {
-      locations: [
-        {
-          id: 1,
-          name: 'Phoenix'
-        },
-        {
-          id: 2,
-          name: 'Tulum'
-        },
-        {
-          id: 3,
-          name: 'Punta Cana'
-        }
-      ]
-
+      locations: []
     };
+  }
+
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/albums')
+    .then(response => response.json())
+    .then(albums => this.setState({locations: albums})
+    )
   }
 
   render() {
     return (
       <div className="App">
         {
-          this.state.locations.map(location => <h1 key={location.id}> {location.name} </h1> )
+          this.state.locations.map(location => <h1 key={location.id}> {location.title} </h1> )
         }
       </div>
     );
