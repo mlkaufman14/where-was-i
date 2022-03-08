@@ -4,10 +4,10 @@ import SignIn from '../../components/sign-in/sign-in.component';
 
 import './sign-in.styles.scss'
 
-const SignIn = () => (
+const SignInPage = () => (
     <div className='sign-in'>
         <SignIn />
     </div>  
 );
 
-export default SignIn;
+export default SignInPage;
